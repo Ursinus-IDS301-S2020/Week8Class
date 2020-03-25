@@ -55,7 +55,24 @@ def get_most_favorited(tweets):
     # to print out the tweet with the maximum counts
     print(tweets[max_index])
 
+def get_tweet_date(tweet):
+    date = tweet['created_at']
+    # Separate out date into components in a list
+    # Each element is a different component separated
+    # by a space
+    fields = date.split() 
+    # The year is the last field
+    year = fields[-1]
+    # Use the dictionary defined at the top of the file
+    # to convert from a three letter month to a two digit month
+    month = MONTHS[fields[1]] 
+    # This magic code formats a day to be 2 digits, potentially
+    # with a leading zero
+    day = "%02d"%int(fields[2]) 
+    return year + "/" + month + "/" + day
+
 
 tweets = pickle.load(open("trumpSinceElection.dat", "rb"))
-#get_devices(tweets)
+get_devices(tweets)
 get_most_favorited(tweets)
+print(get_tweet_date(tweets[0]))

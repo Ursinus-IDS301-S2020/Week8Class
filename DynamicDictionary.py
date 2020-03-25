@@ -17,10 +17,11 @@ keys = ['year', 'major', 'grades']
 # stores the grades by assignment
 assignments = ['audio', 'image', 'nbody']
 
+# Outer loop loops through the students
 for name in names:
     print("Fill in info for ", name)
     # Setup a blank dictionary for this person
-    students[name] = {}
+    students[name] = {} # Add empty dictionary as value for student
     for key in keys:
         # Fill the value for each key
         if key == 'grades':
