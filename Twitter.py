@@ -56,6 +56,18 @@ def get_most_favorited(tweets):
     print(tweets[max_index])
 
 def get_tweet_date(tweet):
+    """
+    Return a date in Year/MM/DD format, which ensures
+    that sorting by the string will sort the tweets in
+    alphabetical order
+    Parameters
+    ----------
+    tweet: dictionary
+        The tweet dictionary
+    Returns
+    -------
+    day: Year/MM/DD string
+    """
     date = tweet['created_at']
     # Separate out date into components in a list
     # Each element is a different component separated
